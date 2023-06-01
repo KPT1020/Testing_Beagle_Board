@@ -160,8 +160,8 @@ void loop(){
     read_value();
   }
 
-  digitalWrite(sensor_heater,255);
   digitalWrite(sensor_heater_pulsing,0);
+  digitalWrite(sensor_heater,255);
   Serial.println("heating sensor");
   previous_time = millis();
   while(millis()-previous_time < 120000){
@@ -187,7 +187,7 @@ void loop(){
   Serial.println("waiting");
   previous_time = millis();
   pump_control();
-  while(millis() - previous_time < 300000){
+  while(millis() - previous_time < 60000){
     read_value();
   }
 }
